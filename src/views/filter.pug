@@ -1,0 +1,22 @@
+extends layout
+include mixins/grid
+
+block content
+  div.container
+    form.form-inline(method="GET")
+      input.form-control.mb-2.mr-sm-2(type="number", name="year", placeholder="Filter by year")
+      input.form-control.mb-2.mr-sm-2(type="number", name="rating", placeholder="Filter by rating")
+      input.form-control.mb-2.mr-sm-2(type="number", name="id", placeholder="Filter by id")
+      button.btn.btn-primary.mb-2(type="submit") Search
+    each movie, index in movies
+      if isNaN(index)
+        +gridAlone(movies)
+        - break
+        //- stop loop
+      else
+        if index % 3 === 0
+          div.row.gx-5.gy-5
+            each movie2, index2 in movies.slice(index, index+3)
+              +grid(movie2)
+    else
+      p nothing!

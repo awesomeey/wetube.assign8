@@ -1,0 +1,15 @@
+mixin grid(item)
+  div.col.my-5
+    a(href=item.id)
+      div.card
+        img.card-img-top.img-fluid(src=item.medium_cover_image, alt=item.title, onerror="this.src='https://cdn-icons-png.flaticon.com/128/6789/6789174.png'")
+        div.card-body
+          p=item.title
+
+mixin gridAlone(item)
+  div.col.my-5.w-50
+    a(href=item.id)
+      div.card
+        img.card-img-top.img-fluid(src=item.medium_cover_image, alt=item.title, onerror="this.src='https://cdn-icons-png.flaticon.com/128/6789/6789174.png'")
+        div.card-body
+          p=item.title

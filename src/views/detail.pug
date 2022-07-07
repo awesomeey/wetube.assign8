@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  div.container
+    table.table.table-striped.mb-5
+      if item && postTbody
+        thead
+          tr
+            th.text-center(scope="col", colspan="2")
+              img(src=item.medium_cover_image)
+          tr
+            th.text-center(scope="col", colspan="2")=item.title_long
+        tbody
+          each data, name in postTbody
+            tr
+              th.text-center(scope="row")=data.name
+                if name === "url"
+                  td
+                    a(href=data.desc, target="_blank") Go to origin page &rarr;
+                else
+                  td=data.desc
+      else
+        p nothing!
+      
