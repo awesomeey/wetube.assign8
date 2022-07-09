@@ -13,7 +13,7 @@ import {
 ```
 - Moveis List
 
-# Recap Form => "POST" / "GET"
+# Recap Form => method="GET"
 - #Main : <code>const movies = getMovies();</code>   
 - #Detail View :   
 matching => movies.filter <code>Number(v.id) === Number(req.params.id)</code>   
